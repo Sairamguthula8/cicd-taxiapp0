@@ -16,7 +16,7 @@ data "aws_vpc" "default" {
 data "aws_subnet" "az" {
   filter {
     name   = "availability-zone"
-    values = ["us-east-1a"]
+    values = ["ap-southeast-1a"]
   }
 
   filter {
@@ -135,7 +135,7 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 # S3 BUCKET
 ########################
 resource "aws_s3_bucket" "artifact_bucket" {
-  bucket = "my-war-bucket"
+  bucket = "my-war-bucket8"
 
   tags = {
     Name = "war-artifacts"
@@ -167,7 +167,7 @@ resource "aws_ecr_repository" "app_repo" {
 
 # ANSIBLE
 resource "aws_instance" "ansible" {
-  ami                    = "ami-0f8a61b66d1accaee"
+  ami                    = "ami-03acbba64aef9bf5c"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnet.az.id
@@ -182,7 +182,7 @@ resource "aws_instance" "ansible" {
 
 # JENKINS MASTER
 resource "aws_instance" "jenkins_master" {
-  ami                    = "ami-0f8a61b66d1accaee"
+  ami                    = "ami-03acbba64aef9bf5c"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnet.az.id
@@ -197,7 +197,7 @@ resource "aws_instance" "jenkins_master" {
 
 # JENKINS SLAVE
 resource "aws_instance" "jenkins_slave" {
-  ami                    = "ami-0f8a61b66d1accaee"
+  ami                    = "ami-03acbba64aef9bf5c"
   instance_type          = "c7i-flex.large"
   key_name               = "taxi"
   subnet_id              = data.aws_subnet.az.id
