@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-southeast-1"
 }
 
 ########################
@@ -27,9 +27,9 @@ data "aws_subnets" "eks_subnets" {
   filter {
     name = "availability-zone"
     values = [
-      "us-east-1a",
-      "us-east-1b",
-      "us-east-1c"
+      "ap-southeast-1a",
+      "ap-southeast-1b",
+      "ap-southeast-1c"
     ]
   }
 }
