@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: taxi-booking
-        image: 291483628871.dkr.ecr.ap-southeast-1.amazonaws.com/taxi-booking-app:v1.3
+        image: 291483628871.dkr.ecr.ap-southeast-1.amazonaws.com/taxi-booking-app:v1.7
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
